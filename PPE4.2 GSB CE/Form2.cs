@@ -77,5 +77,15 @@ namespace PPE4._2_GSB_CE
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            /*
+            Menu optionForm = new Menu();
+            optionForm.Hide();
+            optionForm.Show();
+            this.Close();
+            */
+        }
     }
 }

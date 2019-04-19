@@ -43,12 +43,13 @@ namespace PPE4._2_GSB_CE
 
         private void FiltreDate()
         {
-            var filter = "(Not Discontinued)";
+            var filter = "(Not Discontinued) ";
             
-            var fin = dateTime_End.Value.ToShortDateString();
-            var deb = dateTime_Start.Value.ToShortDateString();
+            var fin = dateTime_End.Value.Date;
+            var deb = dateTime_Start.Value.Date;
 
-            filter += String.Format(" AND (OrderDate BETWEEN  '{0}' And '{1}')", deb, fin);
+            //   filter += String.Format(" OrderDate BETWEEN  '{0}' And '{1}'", deb, fin);    and Date >= '2011/02/25' and Date <= '2011/02/27'
+            filter += String.Format("  and OrderDate >= {0} and OrderDate <= {1} )", deb, fin);
 
             bindingSource1.Filter = filter;
 

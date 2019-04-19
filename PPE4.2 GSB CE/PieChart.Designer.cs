@@ -32,23 +32,17 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TheChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.CA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ordersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.entityDataSource1 = new EFWinforms.EntityDataSource(this.components);
             this.companyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TheChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -67,40 +61,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(800, 150);
             this.dataGridView1.TabIndex = 0;
             // 
-            // TheChart
-            // 
-            this.TheChart.AccessibleName = "";
-            chartArea1.Name = "ChartArea1";
-            this.TheChart.ChartAreas.Add(chartArea1);
-            this.TheChart.DataSource = this.ordersBindingSource1;
-            this.TheChart.ImeMode = System.Windows.Forms.ImeMode.On;
-            legend1.Name = "Legend1";
-            this.TheChart.Legends.Add(legend1);
-            this.TheChart.Location = new System.Drawing.Point(259, 22);
-            this.TheChart.Name = "TheChart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.LegendText = "#CompanyName";
-            series1.Name = "Series1";
-            series1.Points.Add(dataPoint1);
-            series1.XValueMember = "CompanyName";
-            series1.YValueMembers = "CA";
-            this.TheChart.Series.Add(series1);
-            this.TheChart.Size = new System.Drawing.Size(529, 253);
-            this.TheChart.TabIndex = 1;
-            this.TheChart.Text = "chart1";
-            title1.DockedToChartArea = "ChartArea1";
-            title1.Name = "Title1";
-            title2.DockedToChartArea = "ChartArea1";
-            title2.Name = "Title2";
-            title3.DockedToChartArea = "ChartArea1";
-            title3.Name = "Title3";
-            this.TheChart.Titles.Add(title1);
-            this.TheChart.Titles.Add(title2);
-            this.TheChart.Titles.Add(title3);
-            this.TheChart.Click += new System.EventHandler(this.TheChart_Click);
-            // 
             // CA
             // 
             this.CA.DataPropertyName = "CA";
@@ -108,17 +68,33 @@
             this.CA.Name = "CA";
             this.CA.ReadOnly = true;
             // 
-            // ordersBindingSource1
+            // chart1
             // 
-            this.ordersBindingSource1.DataMember = "Orders";
-            this.ordersBindingSource1.DataSource = this.bindingSource1;
-            this.ordersBindingSource1.Position = 0;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.DataSource = this.bindingSource2;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(206, 50);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.IsValueShownAsLabel = true;
+            series1.Legend = "Legend1";
+            series1.LegendText = "#VALX";
+            series1.Name = "Series1";
+            series1.XValueMember = "CompanyName";
+            series1.YValueMembers = "CA";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(396, 203);
+            this.chart1.TabIndex = 2;
+            this.chart1.Text = "chart1";
             // 
-            // bindingSource1
+            // bindingSource2
             // 
-            this.bindingSource1.DataMember = "Shippers";
-            this.bindingSource1.DataSource = this.entityDataSource1;
-            this.bindingSource1.Position = 0;
+            this.bindingSource2.DataMember = "Shippers";
+            this.bindingSource2.DataSource = this.entityDataSource1;
+            this.bindingSource2.Position = 0;
             // 
             // entityDataSource1
             // 
@@ -130,27 +106,26 @@
             this.companyNameDataGridViewTextBoxColumn.HeaderText = "Transporteur";
             this.companyNameDataGridViewTextBoxColumn.Name = "companyNameDataGridViewTextBoxColumn";
             // 
-            // ordersBindingSource
+            // bindingSource1
             // 
-            this.ordersBindingSource.DataMember = "Orders";
-            this.ordersBindingSource.DataSource = this.bindingSource1;
-            this.ordersBindingSource.Position = 0;
+            this.bindingSource1.DataMember = "Shippers";
+            this.bindingSource1.DataSource = this.entityDataSource1;
+            this.bindingSource1.Position = 0;
             // 
             // PieChart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.TheChart);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "PieChart";
             this.Text = "PieChart";
             this.Load += new System.EventHandler(this.PieChart_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TheChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -159,11 +134,10 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private EFWinforms.EntityDataSource entityDataSource1;
-        private System.Windows.Forms.BindingSource ordersBindingSource;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart TheChart;
         private System.Windows.Forms.DataGridViewTextBoxColumn companyNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CA;
-        private System.Windows.Forms.BindingSource ordersBindingSource1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.BindingSource bindingSource2;
     }
 }

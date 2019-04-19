@@ -33,14 +33,6 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TXT_MiniUnitPrice = new System.Windows.Forms.TextBox();
-            this.BT_Save = new System.Windows.Forms.Button();
-            this.BT_Cancel = new System.Windows.Forms.Button();
-            this.BT_Refresh = new System.Windows.Forms.Button();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.entityDataSource1 = new EFWinforms.EntityDataSource(this.components);
             this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supplierIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,9 +45,18 @@
             this.discontinuedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supplierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.entityDataSource1 = new EFWinforms.EntityDataSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.TXT_MiniUnitPrice = new System.Windows.Forms.TextBox();
+            this.BT_Save = new System.Windows.Forms.Button();
+            this.BT_Cancel = new System.Windows.Forms.Button();
+            this.BT_Refresh = new System.Windows.Forms.Button();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -81,84 +82,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(788, 119);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(93, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Minimum Unit Price";
-            // 
-            // TXT_MiniUnitPrice
-            // 
-            this.TXT_MiniUnitPrice.Location = new System.Drawing.Point(211, 42);
-            this.TXT_MiniUnitPrice.Name = "TXT_MiniUnitPrice";
-            this.TXT_MiniUnitPrice.Size = new System.Drawing.Size(100, 20);
-            this.TXT_MiniUnitPrice.TabIndex = 2;
-            this.TXT_MiniUnitPrice.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TXT_MiniUnitPrice_KeyUp);
-            this.TXT_MiniUnitPrice.Validated += new System.EventHandler(this.TXT_MiniUnitPrice_Validated);
-            // 
-            // BT_Save
-            // 
-            this.BT_Save.Location = new System.Drawing.Point(315, 415);
-            this.BT_Save.Name = "BT_Save";
-            this.BT_Save.Size = new System.Drawing.Size(75, 23);
-            this.BT_Save.TabIndex = 3;
-            this.BT_Save.Text = "Save";
-            this.BT_Save.UseVisualStyleBackColor = true;
-            this.BT_Save.Click += new System.EventHandler(this.BT_Save_Click);
-            // 
-            // BT_Cancel
-            // 
-            this.BT_Cancel.Location = new System.Drawing.Point(440, 415);
-            this.BT_Cancel.Name = "BT_Cancel";
-            this.BT_Cancel.Size = new System.Drawing.Size(75, 23);
-            this.BT_Cancel.TabIndex = 4;
-            this.BT_Cancel.Text = "Cancel";
-            this.BT_Cancel.UseVisualStyleBackColor = true;
-            this.BT_Cancel.Click += new System.EventHandler(this.BT_Cancel_Click);
-            // 
-            // BT_Refresh
-            // 
-            this.BT_Refresh.Location = new System.Drawing.Point(546, 415);
-            this.BT_Refresh.Name = "BT_Refresh";
-            this.BT_Refresh.Size = new System.Drawing.Size(75, 23);
-            this.BT_Refresh.TabIndex = 5;
-            this.BT_Refresh.Text = "Refresh";
-            this.BT_Refresh.UseVisualStyleBackColor = true;
-            this.BT_Refresh.Click += new System.EventHandler(this.BT_Refresh_Click);
-            // 
-            // chart1
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.DataSource = this.bindingSource1;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(11, 86);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series1.XValueMember = "ProductName";
-            series1.YValueMembers = "UnitPrice";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(777, 198);
-            this.chart1.TabIndex = 6;
-            this.chart1.Text = "chart1";
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataMember = "Products";
-            this.bindingSource1.DataSource = this.entityDataSource1;
-            this.bindingSource1.Filter = "(Not Discontinued) And UnitPrice >50";
-            this.bindingSource1.Position = 0;
-            // 
-            // entityDataSource1
-            // 
-            this.entityDataSource1.DbContextType = typeof(PPE4._2_GSB_CE.GSB_CEEntities);
             // 
             // productIDDataGridViewTextBoxColumn
             // 
@@ -232,11 +155,100 @@
             this.supplierDataGridViewTextBoxColumn.HeaderText = "Supplier";
             this.supplierDataGridViewTextBoxColumn.Name = "supplierDataGridViewTextBoxColumn";
             // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "Products";
+            this.bindingSource1.DataSource = this.entityDataSource1;
+            this.bindingSource1.Filter = "(Not Discontinued) And UnitPrice >50";
+            this.bindingSource1.Position = 0;
+            // 
+            // entityDataSource1
+            // 
+            this.entityDataSource1.DbContextType = typeof(PPE4._2_GSB_CE.GSB_CEEntities);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(93, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Minimum Unit Price";
+            // 
+            // TXT_MiniUnitPrice
+            // 
+            this.TXT_MiniUnitPrice.Location = new System.Drawing.Point(211, 42);
+            this.TXT_MiniUnitPrice.Name = "TXT_MiniUnitPrice";
+            this.TXT_MiniUnitPrice.Size = new System.Drawing.Size(100, 20);
+            this.TXT_MiniUnitPrice.TabIndex = 2;
+            this.TXT_MiniUnitPrice.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TXT_MiniUnitPrice_KeyUp);
+            this.TXT_MiniUnitPrice.Validated += new System.EventHandler(this.TXT_MiniUnitPrice_Validated);
+            // 
+            // BT_Save
+            // 
+            this.BT_Save.Location = new System.Drawing.Point(315, 415);
+            this.BT_Save.Name = "BT_Save";
+            this.BT_Save.Size = new System.Drawing.Size(75, 23);
+            this.BT_Save.TabIndex = 3;
+            this.BT_Save.Text = "Save";
+            this.BT_Save.UseVisualStyleBackColor = true;
+            this.BT_Save.Click += new System.EventHandler(this.BT_Save_Click);
+            // 
+            // BT_Cancel
+            // 
+            this.BT_Cancel.Location = new System.Drawing.Point(440, 415);
+            this.BT_Cancel.Name = "BT_Cancel";
+            this.BT_Cancel.Size = new System.Drawing.Size(75, 23);
+            this.BT_Cancel.TabIndex = 4;
+            this.BT_Cancel.Text = "Cancel";
+            this.BT_Cancel.UseVisualStyleBackColor = true;
+            this.BT_Cancel.Click += new System.EventHandler(this.BT_Cancel_Click);
+            // 
+            // BT_Refresh
+            // 
+            this.BT_Refresh.Location = new System.Drawing.Point(546, 415);
+            this.BT_Refresh.Name = "BT_Refresh";
+            this.BT_Refresh.Size = new System.Drawing.Size(75, 23);
+            this.BT_Refresh.TabIndex = 5;
+            this.BT_Refresh.Text = "Refresh";
+            this.BT_Refresh.UseVisualStyleBackColor = true;
+            this.BT_Refresh.Click += new System.EventHandler(this.BT_Refresh_Click);
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.DataSource = this.bindingSource1;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(11, 86);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.XValueMember = "ProductName";
+            series1.YValueMembers = "UnitPrice";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(777, 198);
+            this.chart1.TabIndex = 6;
+            this.chart1.Text = "chart1";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(27, 415);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.BT_Refresh);
             this.Controls.Add(this.BT_Cancel);
@@ -249,8 +261,8 @@
             this.Deactivate += new System.EventHandler(this.Form2_Deactivate);
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,5 +291,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn supplierDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bindingSource1;
         private EFWinforms.EntityDataSource entityDataSource1;
+        private System.Windows.Forms.Button button1;
     }
 }

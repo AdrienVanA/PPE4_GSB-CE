@@ -15,7 +15,7 @@ namespace PPE4._2_GSB_CE
             
             get
             {
-                return string.Format("{0}{1}", FirstName, LastName);
+                return string.Format("{0} {1}", FirstName, LastName);
             }
         }
 
@@ -23,6 +23,17 @@ namespace PPE4._2_GSB_CE
         {
             return FullName;
         }
+
+        public int GetAgeFromBirth
+        {
+
+            get
+            {
+                return (DateTime.Today.Year - BirthDate.Value.Year);
+            }
+        }
+
+
     }
 
     public partial class Order_Detail
